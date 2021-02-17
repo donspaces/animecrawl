@@ -188,11 +188,11 @@ def link(char_name):
     return urla
 
 config = {
-        'host': '192.168.3.12',
+        'host': 'localnet',
         'port': 3306,
         'database': 'animecrawl',
         'user': 'donspace',
-        'password': '1.414213562Gh2',
+        'password': ':)',
         'charset': 'utf8',
         'use_unicode': True,
         'get_warnings': True,
