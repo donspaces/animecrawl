@@ -75,11 +75,12 @@ class subtable:
             kyu = ima.date()
             res = []
             if(typ == int or typ == float):
-                    res.append(typ(nums[0]))
+                for i in nums:
+                    res.append(typ(i))
 
             elif(typ == date):
 
-                if(agecov == True and len(nums) == 2):
+                if(agecov == True):
                     age = self.cast("age", int)
                     yearb = kyu.year - age[0]
                     nums.insert(0, str(yearb))
@@ -89,7 +90,7 @@ class subtable:
 
             elif(typ == datetime):
 
-                if (agecov == True and len(nums) == 5):
+                if (agecov == True):
                     age = self.cast("age", int)
                     yearb = ima.year - age[0]
                     nums.insert(0, str(yearb))
@@ -150,12 +151,6 @@ class subtable:
         '''
         if(insall == True):
             selcol = self.table.keys()
-        
-        """
-        for term in self.table.keys():
-            if(self.table[term] == ""):
-                self.table[term] = None
-        """
 
         try:
             cur.execute("INSERT INTO characters (anime, name, height, bloodtype, birthdate, sex) values "
@@ -195,8 +190,8 @@ def link(char_name):
 config = {
         'host': 'localnet',
         'port': 3306,
-        'database': 'animelist',
-        'user': 'donsp',
+        'database': 'animecrawl',
+        'user': 'donspace',
         'password': ':)',
         'charset': 'utf8',
         'use_unicode': True,
